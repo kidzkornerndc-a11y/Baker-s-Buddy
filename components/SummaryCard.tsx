@@ -24,27 +24,19 @@ export const SummaryCard: React.FC<Props> = ({
   const totalBatchCost = ingredientCost + packagingCost + laborCost;
   const costPerItem = yieldCount > 0 ? totalBatchCost / yieldCount : 0;
   
-  // Sale Price Formula: Cost / (1 - Margin%)
-  // Or Cost * (1 + Margin%). The user usually thinks "Markup" or "Margin". 
-  // Standard Retail Margin: (Sale - Cost) / Sale = Margin %. 
-  // Let's use Markup for simplicity if user enters 50%, they likely mean 50% markup on cost.
-  // Actually, standard business margin is usually calculated as: Price = Cost / (1 - Margin/100).
-  // Let's clarify in UI. Let's stick to MARKUP for small business ease: Price = Cost * (1 + Margin/100).
-  // Wait, let's provide Cost + Profit. 
-  // Let's use the safer (Cost * (1 + Margin/100)) which is Markup.
   const profitAmount = totalBatchCost * (profitMargin / 100);
   const totalBatchPrice = totalBatchCost + profitAmount;
   const pricePerItem = yieldCount > 0 ? totalBatchPrice / yieldCount : 0;
 
   const data = [
-    { name: 'Ingredients', value: ingredientCost, color: '#f97316' }, // Orange-500
+    { name: 'Ingredients', value: ingredientCost, color: '#8b5cf6' }, // Violet-500 (Lilac)
     { name: 'Packaging', value: packagingCost, color: '#3b82f6' },   // Blue-500
     { name: 'Labor', value: laborCost, color: '#10b981' },           // Emerald-500
-    { name: 'Profit', value: profitAmount, color: '#8b5cf6' },       // Violet-500
+    { name: 'Profit', value: profitAmount, color: '#d946ef' },       // Fuchsia-500
   ].filter(d => d.value > 0);
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-orange-100 p-6 sticky top-6">
+    <div className="bg-white rounded-2xl shadow-lg border border-violet-100 p-6 sticky top-6">
       <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
         Pricing Breakdown
       </h3>
@@ -76,7 +68,7 @@ export const SummaryCard: React.FC<Props> = ({
 
       <div className="space-y-3 mb-6">
         <div className="flex justify-between text-sm">
-            <span className="flex items-center gap-2 text-gray-600"><div className="w-2 h-2 rounded-full bg-orange-500"></div> Ingredients</span>
+            <span className="flex items-center gap-2 text-gray-600"><div className="w-2 h-2 rounded-full bg-violet-500"></div> Ingredients</span>
             <span className="font-medium">{currencySymbol}{ingredientCost.toFixed(2)}</span>
         </div>
         <div className="flex justify-between text-sm">
@@ -106,21 +98,21 @@ export const SummaryCard: React.FC<Props> = ({
                     max="200" 
                     value={profitMargin} 
                     onChange={(e) => onProfitMarginChange(parseFloat(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-violet-500"
                 />
-                <span className="text-orange-600 font-bold w-12 text-right">{profitMargin}%</span>
+                <span className="text-violet-600 font-bold w-12 text-right">{profitMargin}%</span>
             </div>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white p-3 rounded-lg border border-orange-100 text-center">
+            <div className="bg-white p-3 rounded-lg border border-violet-100 text-center">
                 <div className="text-xs text-gray-500 mb-1">Cost Per Item</div>
                 <div className="text-xl font-bold text-gray-700">
                     {currencySymbol}{costPerItem.toFixed(2)}
                 </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-3 rounded-lg text-center text-white shadow-md">
-                <div className="text-xs text-orange-100 mb-1">Sale Price</div>
+            <div className="bg-gradient-to-br from-violet-500 to-violet-600 p-3 rounded-lg text-center text-white shadow-md">
+                <div className="text-xs text-violet-100 mb-1">Sale Price</div>
                 <div className="text-2xl font-bold">
                     {currencySymbol}{pricePerItem.toFixed(2)}
                 </div>

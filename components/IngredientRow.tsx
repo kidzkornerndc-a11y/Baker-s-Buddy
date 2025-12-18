@@ -83,7 +83,7 @@ export const IngredientRow: React.FC<Props> = ({
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start p-4 bg-white rounded-xl shadow-sm border border-orange-100 hover:border-orange-200 transition-colors mb-3">
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start p-4 bg-white rounded-xl shadow-sm border border-violet-100 hover:border-violet-200 transition-colors mb-3">
       
       {/* Name */}
       <div className="md:col-span-3">
@@ -94,14 +94,14 @@ export const IngredientRow: React.FC<Props> = ({
           value={ingredient.name}
           onChange={(e) => onChange(ingredient.id, 'name', e.target.value)}
           onKeyDown={handleKeyDown}
-          className="w-full rounded-md border-gray-200 bg-white px-3 py-2 text-sm focus:border-orange-500 focus:ring-orange-500"
+          className="w-full rounded-md border-gray-200 bg-white px-3 py-2 text-sm focus:border-violet-500 focus:ring-violet-500"
           placeholder="e.g. Flour"
         />
       </div>
 
       {/* Purchase Info */}
-      <div className="md:col-span-4 grid grid-cols-3 gap-2 bg-orange-50/50 p-2 rounded-lg">
-        <div className="col-span-3 text-xs font-semibold text-orange-800 mb-1 flex items-center">
+      <div className="md:col-span-4 grid grid-cols-3 gap-2 bg-violet-50/50 p-2 rounded-lg">
+        <div className="col-span-3 text-xs font-semibold text-violet-800 mb-1 flex items-center">
           Purchased As
         </div>
         <div>
@@ -115,7 +115,7 @@ export const IngredientRow: React.FC<Props> = ({
               value={ingredient.purchasePrice || ''}
               onChange={(e) => onChange(ingredient.id, 'purchasePrice', parseFloat(e.target.value) || 0)}
               onKeyDown={handleKeyDown}
-              className="w-full rounded-md border-gray-200 bg-white pl-6 px-2 py-1.5 text-sm focus:border-orange-500 focus:ring-orange-500"
+              className="w-full rounded-md border-gray-200 bg-white pl-6 px-2 py-1.5 text-sm focus:border-violet-500 focus:ring-violet-500"
             />
           </div>
         </div>
@@ -127,7 +127,7 @@ export const IngredientRow: React.FC<Props> = ({
             onChange={(e) => onChange(ingredient.id, 'purchaseQuantity', e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="e.g. 1"
-            className="w-full rounded-md border-gray-200 bg-white px-2 py-1.5 text-sm focus:border-orange-500 focus:ring-orange-500"
+            className="w-full rounded-md border-gray-200 bg-white px-2 py-1.5 text-sm focus:border-violet-500 focus:ring-violet-500"
           />
         </div>
         <div>
@@ -136,7 +136,7 @@ export const IngredientRow: React.FC<Props> = ({
             value={ingredient.purchaseUnit}
             onChange={(e) => onChange(ingredient.id, 'purchaseUnit', e.target.value)}
             onKeyDown={handleKeyDown}
-            className="w-full rounded-md border-gray-200 bg-white px-1 py-1.5 text-sm focus:border-orange-500 focus:ring-orange-500"
+            className="w-full rounded-md border-gray-200 bg-white px-1 py-1.5 text-sm focus:border-violet-500 focus:ring-violet-500"
           >
             {unitOptions}
           </select>
@@ -156,7 +156,7 @@ export const IngredientRow: React.FC<Props> = ({
             onChange={(e) => onChange(ingredient.id, 'recipeQuantity', e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="e.g. 1/4"
-            className="w-full rounded-md border-gray-200 bg-white px-2 py-1.5 text-sm focus:border-orange-500 focus:ring-orange-500"
+            className="w-full rounded-md border-gray-200 bg-white px-2 py-1.5 text-sm focus:border-violet-500 focus:ring-violet-500"
           />
         </div>
         <div>
@@ -165,7 +165,7 @@ export const IngredientRow: React.FC<Props> = ({
             value={ingredient.recipeUnit}
             onChange={(e) => onChange(ingredient.id, 'recipeUnit', e.target.value)}
             onKeyDown={handleKeyDown}
-            className="w-full rounded-md border-gray-200 bg-white px-1 py-1.5 text-sm focus:border-orange-500 focus:ring-orange-500"
+            className="w-full rounded-md border-gray-200 bg-white px-1 py-1.5 text-sm focus:border-violet-500 focus:ring-violet-500"
           >
             {unitOptions}
           </select>

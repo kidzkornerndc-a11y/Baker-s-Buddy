@@ -46,7 +46,7 @@ export const PackagingRow: React.FC<Props> = ({
           value={item.name}
           onChange={(e) => onChange(item.id, 'name', e.target.value)}
           placeholder="e.g. Box, Label, Sticker"
-          className="w-full rounded-md border-gray-200 bg-white px-3 py-2 text-sm focus:border-orange-500 focus:ring-orange-500"
+          className="w-full rounded-md border-gray-200 bg-white px-3 py-2 text-sm focus:border-violet-500 focus:ring-violet-500"
         />
       </div>
       
@@ -59,7 +59,7 @@ export const PackagingRow: React.FC<Props> = ({
               step="0.01"
               value={item.purchasePrice || ''}
               onChange={(e) => onChange(item.id, 'purchasePrice', parseFloat(e.target.value) || 0)}
-              className="w-full rounded-md border-gray-200 bg-white pl-3 pt-6 pb-2 text-sm focus:border-orange-500 focus:ring-orange-500"
+              className="w-full rounded-md border-gray-200 bg-white pl-3 pt-6 pb-2 text-sm focus:border-violet-500 focus:ring-violet-500"
             />
           </div>
           <div className="relative w-24">
@@ -69,7 +69,7 @@ export const PackagingRow: React.FC<Props> = ({
               value={item.purchaseQuantity}
               onChange={(e) => onChange(item.id, 'purchaseQuantity', e.target.value)}
               placeholder="100"
-              className="w-full rounded-md border-gray-200 bg-white pl-3 pt-6 pb-2 text-sm focus:border-orange-500 focus:ring-orange-500"
+              className="w-full rounded-md border-gray-200 bg-white pl-3 pt-6 pb-2 text-sm focus:border-violet-500 focus:ring-violet-500"
             />
           </div>
           <div className="relative w-24">
@@ -79,7 +79,7 @@ export const PackagingRow: React.FC<Props> = ({
               value={item.quantityUsed}
               onChange={(e) => onChange(item.id, 'quantityUsed', e.target.value)}
               placeholder="1"
-              className="w-full rounded-md border-gray-200 bg-white pl-3 pt-6 pb-2 text-sm focus:border-orange-500 focus:ring-orange-500"
+              className="w-full rounded-md border-gray-200 bg-white pl-3 pt-6 pb-2 text-sm focus:border-violet-500 focus:ring-violet-500"
             />
           </div>
       </div>

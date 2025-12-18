@@ -201,13 +201,13 @@ export default function App() {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <header className="bg-white border-b border-orange-100 sticky top-0 z-30">
+      <header className="bg-white border-b border-violet-100 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-orange-500 p-2 rounded-lg text-white shadow-md">
+            <div className="bg-violet-500 p-2 rounded-lg text-white shadow-md">
                 <ChefHat size={24} />
             </div>
-            <h1 className="text-xl font-bold text-gray-800 tracking-tight hidden md:block">Baker's <span className="text-orange-500">Price</span></h1>
+            <h1 className="text-xl font-bold text-gray-800 tracking-tight hidden md:block">Baker's <span className="text-violet-500">Price</span></h1>
           </div>
           <div className="flex items-center gap-2">
             {isEditing ? (
@@ -246,7 +246,7 @@ export default function App() {
                 onClick={() => setActiveTab(cat)}
                 className={`pb-3 text-sm font-medium whitespace-nowrap transition-all border-b-2 ${
                   activeTab === cat 
-                    ? 'border-orange-500 text-orange-600' 
+                    ? 'border-violet-500 text-violet-600' 
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
@@ -273,9 +273,9 @@ export default function App() {
           <div className="lg:col-span-2 space-y-8">
             
             {/* Batch Info */}
-            <section className="bg-white p-6 rounded-2xl shadow-sm border border-orange-50/50">
+            <section className="bg-white p-6 rounded-2xl shadow-sm border border-violet-50/50">
                 <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-sm">1</span>
+                    <span className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 text-sm">1</span>
                     Batch Details
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -287,7 +287,7 @@ export default function App() {
                             disabled={!isEditing}
                             value={currentState.batchYield}
                             onChange={(e) => updateState({ batchYield: Math.max(1, parseInt(e.target.value) || 0) })}
-                            className="w-full rounded-lg border-gray-300 bg-white disabled:bg-gray-50 disabled:text-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500 py-2.5 px-3"
+                            className="w-full rounded-lg border-gray-300 bg-white disabled:bg-gray-50 disabled:text-gray-500 shadow-sm focus:border-violet-500 focus:ring-violet-500 py-2.5 px-3"
                         />
                         <p className="text-xs text-gray-400 mt-1">Total count of items produced</p>
                     </div>
@@ -299,7 +299,7 @@ export default function App() {
                             disabled={!isEditing}
                             value={currentState.hourlyRate}
                             onChange={(e) => updateState({ hourlyRate: parseFloat(e.target.value) || 0 })}
-                            className="w-full rounded-lg border-gray-300 bg-white disabled:bg-gray-50 disabled:text-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500 py-2.5 px-3"
+                            className="w-full rounded-lg border-gray-300 bg-white disabled:bg-gray-50 disabled:text-gray-500 shadow-sm focus:border-violet-500 focus:ring-violet-500 py-2.5 px-3"
                         />
                     </div>
                     <div>
@@ -311,7 +311,7 @@ export default function App() {
                             disabled={!isEditing}
                             value={currentState.hoursSpent}
                             onChange={(e) => updateState({ hoursSpent: parseFloat(e.target.value) || 0 })}
-                            className="w-full rounded-lg border-gray-300 bg-white disabled:bg-gray-50 disabled:text-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500 py-2.5 px-3"
+                            className="w-full rounded-lg border-gray-300 bg-white disabled:bg-gray-50 disabled:text-gray-500 shadow-sm focus:border-violet-500 focus:ring-violet-500 py-2.5 px-3"
                         />
                     </div>
                 </div>
@@ -321,12 +321,12 @@ export default function App() {
             <section>
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-                        <span className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-sm">2a</span>
+                        <span className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 text-sm">2a</span>
                         Dry Ingredients
-                        <Wheat size={16} className="text-orange-400 ml-1" />
+                        <Wheat size={16} className="text-violet-400 ml-1" />
                     </h2>
                     {isEditing && (
-                        <button onClick={() => addIngredient('dry')} className="text-sm text-orange-600 font-medium hover:text-orange-700 flex items-center gap-1">
+                        <button onClick={() => addIngredient('dry')} className="text-sm text-violet-600 font-medium hover:text-violet-700 flex items-center gap-1">
                             <Plus size={16} /> Add Dry
                         </button>
                     )}
@@ -335,7 +335,7 @@ export default function App() {
                 {dryIngredients.length === 0 ? (
                      <div className="bg-white border-2 border-dashed border-gray-200 rounded-xl p-6 text-center mb-6">
                         <p className="text-gray-400 text-sm">No dry ingredients (flour, sugar, salt...).</p>
-                        {isEditing && <button onClick={() => addIngredient('dry')} className="mt-2 text-sm text-orange-600 font-medium">Add Dry Item</button>}
+                        {isEditing && <button onClick={() => addIngredient('dry')} className="mt-2 text-sm text-violet-600 font-medium">Add Dry Item</button>}
                     </div>
                 ) : (
                     <div className={`${isEditing ? "space-y-3" : "bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"} mb-8`}>
@@ -439,11 +439,11 @@ export default function App() {
             <section className="mt-8">
                  <div className="flex items-center justify-between mb-4">
                     <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-                        <span className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-sm">3</span>
+                        <span className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 text-sm">3</span>
                         Packaging, Labels, Stickers
                     </h2>
                     {isEditing && (
-                        <button onClick={addPackaging} className="text-sm text-orange-600 font-medium hover:text-orange-700 flex items-center gap-1">
+                        <button onClick={addPackaging} className="text-sm text-violet-600 font-medium hover:text-violet-700 flex items-center gap-1">
                             <Plus size={16} /> Add Packaging
                         </button>
                     )}
