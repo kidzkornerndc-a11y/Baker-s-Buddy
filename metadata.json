@@ -1,0 +1,5 @@
+{
+  "name": "Baker's Price",
+  "description": "A professional bakery pricing calculator that helps bakers calculate accurate sale prices including profit margins and packaging costs. Features AI recipe parsing.",
+  "requestFramePermissions": []
+}
